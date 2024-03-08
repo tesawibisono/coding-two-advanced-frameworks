@@ -3,12 +3,25 @@ class Point {
   float y;
   int label;
   
-  //constructor
-  Point(){
-    y = random(400);
-    x = random(400);
-    println("x=" + x);
-    println("y=" +y);
+  Point() {
+    x = random(width);
+    y = random(height);
     
+    if (x > y) {
+      label = 1;
+    } else {
+      label = -1;
+    }
   }
+  
+  void show() {
+    stroke(0);
+    if (label == 1) {
+      fill(255); 
+    } else {
+      fill(0);
+    }
+    ellipse(x, y, 32, 32);
+  }
+
 }
